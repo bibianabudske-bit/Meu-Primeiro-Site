@@ -1,11 +1,511 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Galeria de Atividades Infantis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            word-wrap: break-word;
+        }
+
+        h1 span {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            aspect-ratio: 1;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            font-size: 0.9em;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .gallery-item:hover .overlay {
+            transform: translateY(0);
+        }
+
+        .atividade-numero {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #667eea;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+                gap: 10px;
+            }
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+            border-top: 2px dashed #667eea;
+        }
+    </style>
 </head>
 <body>
-Eu não sei o que estou fazendo!!    
+    <div class="container">
+        <h1>🎨 <span>Galeria de Atividades Infantis</span> 🎨</h1>
+        
+        <div class="gallery">
+            <!-- Atividade 1 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">1</div>
+                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=400&h=400&fit=crop" alt="Criança pintando">
+                <div class="overlay">Pintura</div>
+            </div>
+            
+            <!-- Atividade 2 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">2</div>
+                <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=400&h=400&fit=crop" alt="Criança lendo">
+                <div class="overlay">Leitura</div>
+            </div>
+            
+            <!-- Atividade 3 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">3</div>
+                <img src="https://images.unsplash.com/photo-1566140967404-b8b3932483f5?w=400&h=400&fit=crop" alt="Brincando com blocos">
+                <div class="overlay">Blocos de Montar</div>
+            </div>
+            
+            <!-- Atividade 4 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">4</div>
+                <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=400&h=400&fit=crop" alt="Desenho">
+                <div class="overlay">Desenho</div>
+            </div>
+            
+            <!-- Atividade 5 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">5</div>
+                <img src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e?w=400&h=400&fit=crop" alt="Brincando com massinha">
+                <div class="overlay">Massinha</div>
+            </div>
+            
+            <!-- Atividade 6 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">6</div>
+                <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=400&h=400&fit=crop" alt="Jogos educativos">
+                <div class="overlay">Jogos Educativos</div>
+            </div>
+            
+            <!-- Atividade 7 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">7</div>
+                <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=400&h=400&fit=crop" alt="Música infantil">
+                <div class="overlay">Música</div>
+            </div>
+            
+            <!-- Atividade 8 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">8</div>
+                <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=400&h=400&fit=crop" alt="Brincando ao ar livre">
+                <div class="overlay">Atividades ao Ar Livre</div>
+            </div>
+            
+            <!-- Atividade 9 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">9</div>
+                <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=400&h=400&fit=crop" alt="Teatro infantil">
+                <div class="overlay">Teatro</div>
+            </div>
+            
+            <!-- Atividade 10 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">10</div>
+                <img src="https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?w=400&h=400&fit=crop" alt="Dança">
+                <div class="overlay">Dança</div>
+            </div>
+            
+            <!-- Atividade 11 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">11</div>
+                <img src="https://images.unsplash.com/photo-1544717302-de3049c5fd71?w=400&h=400&fit=crop" alt="Quebra-cabeça">
+                <div class="overlay">Quebra-cabeça</div>
+            </div>
+            
+            <!-- Atividade 12 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">12</div>
+                <img src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=400&h=400&fit=crop" alt="Brincando com água">
+                <div class="overlay">Brincadeiras com Água</div>
+            </div>
+            
+            <!-- Atividade 13 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">13</div>
+                <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=400&h=400&fit=crop" alt="Brincando com instrumentos">
+                <div class="overlay">Instrumentos Musicais</div>
+            </div>
+            
+            <!-- Atividade 14 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">14</div>
+                <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&h=400&fit=crop" alt="Contando histórias">
+                <div class="overlay">Hora da História</div>
+            </div>
+            
+            <!-- Atividade 15 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">15</div>
+                <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=400&h=400&fit=crop" alt="Pintura com giz">
+                <div class="overlay">Pintura com Giz</div>
+            </div>
+            
+            <!-- Atividade 16 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">16</div>
+                <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=400&h=400&fit=crop" alt="Brincando com massinha">
+                <div class="overlay">Modelagem</div>
+            </div>
+            
+            <!-- Atividade 17 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">17</div>
+                <img src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e?w=400&h=400&fit=crop" alt="Brincando com quebra-cabeça">
+                <div class="overlay">Quebra-cabeça</div>
+            </div>
+            
+            <!-- Atividade 18 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">18</div>
+                <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=400&h=400&fit=crop" alt="Brincando no parque">
+                <div class="overlay">Parque</div>
+            </div>
+            
+            <!-- Atividade 19 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">19</div>
+                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=400&h=400&fit=crop" alt="Desenhando com giz">
+                <div class="overlay">Desenho com Giz</div>
+            </div>
+            
+            <!-- Atividade 20 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">20</div>
+                <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=400&h=400&fit=crop" alt="Brincando com massinha colorida">
+                <div class="overlay">Massinha Colorida</div>
+            </div>
+            
+            <!-- Atividade 21 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">21</div>
+                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=400&h=400&fit=crop" alt="Pintura com pincel">
+                <div class="overlay">Pintura</div>
+            </div>
+            
+            <!-- Atividade 22 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">22</div>
+                <img src="https://images.unsplash.com/photo-1566140967404-b8b3932483f5?w=400&h=400&fit=crop" alt="Brincando com Lego">
+                <div class="overlay">Lego</div>
+            </div>
+            
+            <!-- Atividade 23 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">23</div>
+                <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=400&h=400&fit=crop" alt="Hora da leitura">
+                <div class="overlay">Leitura</div>
+            </div>
+            
+            <!-- Atividade 24 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">24</div>
+                <img src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e?w=400&h=400&fit=crop" alt="Brincando com massinha">
+                <div class="overlay">Massinha</div>
+            </div>
+            
+            <!-- Atividade 25 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">25</div>
+                <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=400&h=400&fit=crop" alt="Brincando com jogos">
+                <div class="overlay">Jogos</div>
+            </div>
+            
+            <!-- Atividade 26 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">26</div>
+                <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=400&h=400&fit=crop" alt="Música">
+                <div class="overlay">Música</div>
+            </div>
+            
+            <!-- Atividade 27 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">27</div>
+                <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=400&h=400&fit=crop" alt="Brincando ao ar livre">
+                <div class="overlay">Atividades Externas</div>
+            </div>
+            
+            <!-- Atividade 28 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">28</div>
+                <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=400&h=400&fit=crop" alt="Teatro">
+                <div class="overlay">Dramatização</div>
+            </div>
+            
+            <!-- Atividade 29 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">29</div>
+                <img src="https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?w=400&h=400&fit=crop" alt="Dança">
+                <div class="overlay">Dança</div>
+            </div>
+            
+            <!-- Atividade 30 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">30</div>
+                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=400&h=400&fit=crop" alt="Pintura">
+                <div class="overlay">Arte</div>
+            </div>
+            
+            <!-- Atividade 31 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">31</div>
+                <img src="https://images.unsplash.com/photo-1566140967404-b8b3932483f5?w=400&h=400&fit=crop" alt="Construção">
+                <div class="overlay">Construção</div>
+            </div>
+            
+            <!-- Atividade 32 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">32</div>
+                <img src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=400&h=400&fit=crop" alt="Brincadeiras aquáticas">
+                <div class="overlay">Água</div>
+            </div>
+            
+            <!-- Atividade 33 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">33</div>
+                <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=400&h=400&fit=crop" alt="Giz de cera">
+                <div class="overlay">Giz de Cera</div>
+            </div>
+            
+            <!-- Atividade 34 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">34</div>
+                <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&h=400&fit=crop" alt="Contação de histórias">
+                <div class="overlay">Histórias</div>
+            </div>
+            
+            <!-- Atividade 35 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">35</div>
+                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=400&h=400&fit=crop" alt="Pintura criativa">
+                <div class="overlay">Pintura</div>
+            </div>
+            
+            <!-- Atividade 36 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">36</div>
+                <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=400&h=400&fit=crop" alt="Livros">
+                <div class="overlay">Leitura</div>
+            </div>
+            
+            <!-- Atividade 37 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">37</div>
+                <img src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e?w=400&h=400&fit=crop" alt="Massinha">
+                <div class="overlay">Massinha</div>
+            </div>
+            
+            <!-- Atividade 38 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">38</div>
+                <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=400&h=400&fit=crop" alt="Jogos de mesa">
+                <div class="overlay">Jogos de Mesa</div>
+            </div>
+            
+            <!-- Atividade 39 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">39</div>
+                <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=400&h=400&fit=crop" alt="Música e movimento">
+                <div class="overlay">Música</div>
+            </div>
+            
+            <!-- Atividade 40 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">40</div>
+                <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=400&h=400&fit=crop" alt="Natureza">
+                <div class="overlay">Natureza</div>
+            </div>
+            
+            <!-- Atividade 41 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">41</div>
+                <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=400&h=400&fit=crop" alt="Teatro de fantoches">
+                <div class="overlay">Fantoches</div>
+            </div>
+            
+            <!-- Atividade 42 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">42</div>
+                <img src="https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?w=400&h=400&fit=crop" alt="Dança criativa">
+                <div class="overlay">Dança</div>
+            </div>
+            
+            <!-- Atividade 43 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">43</div>
+                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=400&h=400&fit=crop" alt="Arte com tinta">
+                <div class="overlay">Arte</div>
+            </div>
+            
+            <!-- Atividade 44 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">44</div>
+                <img src="https://images.unsplash.com/photo-1566140967404-b8b3932483f5?w=400&h=400&fit=crop" alt="Blocos de construção">
+                <div class="overlay">Blocos</div>
+            </div>
+            
+            <!-- Atividade 45 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">45</div>
+                <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=400&h=400&fit=crop" alt="Contos infantis">
+                <div class="overlay">Contos</div>
+            </div>
+            
+            <!-- Atividade 46 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">46</div>
+                <img src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e?w=400&h=400&fit=crop" alt="Modelagem criativa">
+                <div class="overlay">Modelagem</div>
+            </div>
+            
+            <!-- Atividade 47 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">47</div>
+                <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=400&h=400&fit=crop" alt="Jogos de raciocínio">
+                <div class="overlay">Raciocínio</div>
+            </div>
+            
+            <!-- Atividade 48 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">48</div>
+                <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=400&h=400&fit=crop" alt="Exploração musical">
+                <div class="overlay">Música</div>
+            </div>
+            
+            <!-- Atividade 49 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">49</div>
+                <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=400&h=400&fit=crop" alt="Exploração ao ar livre">
+                <div class="overlay">Exploração</div>
+            </div>
+            
+            <!-- Atividade 50 -->
+            <div class="gallery-item">
+                <div class="atividade-numero">50</div>
+                <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=400&h=400&fit=crop" alt="Teatro de sombras">
+                <div class="overlay">Teatro de Sombras</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            🧸 50 atividades divertidas para crianças explorarem sua criatividade! 🎨
+        </div>
+    </div>
 </body>
 </html>
